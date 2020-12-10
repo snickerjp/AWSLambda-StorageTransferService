@@ -58,12 +58,12 @@ def create_transfer_client(description, project_id, source_bucket, access_key, s
         json.dumps(result, indent=4)))
 
 def lambda_handler(event, context):
-    description = 'Sync data from AWS to GCP'
-    project_id = 'storagetransferservice-test'
-    source_bucket = 'storage-transfer-service-test-gcp'
+    description = 'Sync data from AWS to GCP created by AWS Lambda'
+    project_id = os.getenv('GCP_PROJECT')
+    source_bucket = os.getenv('X_AWS_S3_BUCKET')
     access_key = os.getenv('ACCESS_KEY')
     secret_access_key = os.getenv('SECRET_ACCESS_KEY')
-    sink_bucket = 'storage-transfer-service-test-destination'
+    sink_bucket = os.getenv('GCS_BUCKET')
     today = datetime.now()
     year = today.year
     month = today.month

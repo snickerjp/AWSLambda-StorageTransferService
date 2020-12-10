@@ -35,7 +35,8 @@ def create_transfer_client(description, project_id, source_bucket, access_key, s
                 'bucketName': sink_bucket
             },
             'transferOptions': {
-                'deleteObjectsFromSourceAfterTransfer': True
+                'deleteObjectsFromSourceAfterTransfer': False,
+                'deleteObjectsUniqueInSink': True
             }
         },
         'schedule': {

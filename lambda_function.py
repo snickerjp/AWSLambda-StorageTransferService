@@ -42,12 +42,12 @@ def create_transfer_client(description, project_id, source_bucket, access_key, s
             'scheduleStartDate': {
                 'year': year,
                 'month': month,
-                'day': day 
+                'day': day
             },
             'scheduleEndDate': {
                 'year': year,
                 'month': month,
-                'day': day 
+                'day': day
             }
         }
     }
@@ -60,20 +60,20 @@ def lambda_handler(event, context):
     description = 'Sync data from AWS to GCP'
     project_id = 'storagetransferservice-test'
     source_bucket = 'storage-transfer-service-test-gcp'
-    access_key = os.getenv('ACCESS_KEY') 
-    secret_access_key = os.getenv('SECRET_ACCESS_KEY') 
+    access_key = os.getenv('ACCESS_KEY')
+    secret_access_key = os.getenv('SECRET_ACCESS_KEY')
     sink_bucket = 'storage-transfer-service-test-destination'
     today = datetime.now()
     year = today.year
     month = today.month
     day = today.day
     create_transfer_client(
-        description, 
-        project_id, 
-        source_bucket, 
-        access_key, 
-        secret_access_key, 
-        sink_bucket, 
-        year, 
-        month, 
+        description,
+        project_id,
+        source_bucket,
+        access_key,
+        secret_access_key,
+        sink_bucket,
+        year,
+        month,
         day)

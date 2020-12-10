@@ -1,8 +1,7 @@
 # AWSLambda-StorageTransferService
 
----
-
 * Sync GCS & S3 from S3 for AWS Lambda
+---
 
 ## Set AWS Lambda Environment
 

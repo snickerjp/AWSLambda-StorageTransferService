@@ -36,6 +36,7 @@ mkdir python
 pip install -r requirements.txt --target ./python
 cd ./python
 zip -r ../layer.zip .
+cd ..
 
 aws lambda publish-layer-version \
   --layer-name gcp-s3-layer \
@@ -57,3 +58,7 @@ aws lambda update-function-configuration \
   --layers \
     "arn:aws:lambda:us-east-1:XXXXXXXXXXXX:layer:gcp-s3-layer:1" # layer arn
 ```
+
+* Set trigger
+* Set Role
+* Set AWS Lambda Environment

@@ -19,6 +19,8 @@
 
 ## Release Example
 
+* Google Cloud. Enable -> [Storage Transfer API]
+
 * Create AWS Lambda function.
 	* ex.
         * Name: StorageTransferServiceStarter

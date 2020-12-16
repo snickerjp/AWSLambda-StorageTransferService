@@ -15,7 +15,7 @@ s3 = boto3.client('s3')
 
 def create_transfer_client(description, project_id, source_bucket, access_key, secret_access_key, sink_bucket, year, month, day):
     """Create a one-off transfer from Amazon S3 to Google Cloud Storage."""
-    storagetransfer = googleapiclient.discovery.build('storagetransfer', 'v1')
+    storagetransfer = googleapiclient.discovery.build('storagetransfer', 'v1', cache_discovery=False)
 
     # Edit this template with desired parameters.
     # Specify times below using US Pacific Time Zone.
